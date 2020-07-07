@@ -38,4 +38,30 @@ void Swizzle(Class c, SEL origSEL, SEL newSEL) {
     }
 }
 
-
+void SwizzleInstance(Class c,SEL origSEL, SEL newSEL) {
+    Method origMethed = class_getInstanceMethod(c, origSEL);
+    Method newMethod = nil;
+    if(!origSEL) {
+        origMethed = class_getClassMethod(c, origSEL);
+        if(!origMethed) {
+            return;
+        }
+        newMethod = class_getClassMethod(c, newSEL);
+        if(!newMethod) {
+            return;
+        }
+    }
+    else {
+        newMethod = class_getInstanceMethod(c, newSEL);
+        if (!newMethod) {
+            return;
+        }
+    }
+    
+    if(class_addMethod(c, origSEL, method_getImplementation(newMethod), method_getTypeEncoding(newMethod))) {
+        class_replaceMethod(c, newSEL, method_getImplementation(origMethed), method_getTypeEncoding(origMethed));
+    }
+    else {
+        method_exchangeImplementations(newMethod, origMethed);
+    }
+}

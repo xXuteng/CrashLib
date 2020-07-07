@@ -9,3 +9,6 @@
 #import <Foundation/Foundation.h>
 
 void Swizzle(Class c,SEL origSEL, SEL newSEL);
+
+void SwizzleInstance(Class c,SEL origSEL, SEL newSEL);
+
