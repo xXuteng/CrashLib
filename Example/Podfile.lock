@@ -1,0 +1,27 @@
+PODS:
+  - CrashLib (0.1.0)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+
+DEPENDENCIES:
+  - CrashLib (from `../`)
+  - FBSnapshotTestCase
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  CrashLib:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CrashLib: 5ccaa0a285f38a8023aaf8e8cf1edfd9eb24f3ae
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+
+PODFILE CHECKSUM: 756f5292b2bbcb00a27897a061cb5c26711c4b3a
+
+COCOAPODS: 1.9.3

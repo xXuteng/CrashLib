@@ -1,0 +1,6 @@
+framework module CrashLib {
+  umbrella header "CrashLib-umbrella.h"
+
+  export *
+  module * { export * }
+}
